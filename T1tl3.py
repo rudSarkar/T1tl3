@@ -34,7 +34,7 @@ def checkTitle(argv):
 				url = 'https://'+line2
 				try:
 					result = requests.get(url)
-					soup = bs(result.content, 'lxml').encode("utf-8")
+					soup = bs(result.content, 'html.parser').encode("utf-8")
 					title = soup.select_one('title').text
 					print ('')
 					print (' [+] URL Title: ' + title)
