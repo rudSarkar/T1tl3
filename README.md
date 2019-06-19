@@ -18,6 +18,6 @@ $ python T1tl3.py urlList.txt
 
 # Screenshot
 
-![screenshot of T1tl3](https://raw.githubusercontent.com/rudSarkar/T1tl3/master/ss.png)
+![screenshot of T1tl3 Tool](https://raw.githubusercontent.com/rudSarkar/T1tl3/master/ss.png)
 
 Ping me if you having problem with this tool [🐦 @rudr4_sarkar](https://twitter.com/rudr4_sarkar)
