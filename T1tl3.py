@@ -31,22 +31,20 @@ def checkTitle(argv):
 		for line in f:
 			try:
 				line2 = line.strip()
-				url = 'https://'+line2
+				url = 'http://'+line2
 				try:
-					result = requests.get(url)
-					soup = bs(result.content, 'lxml').encode("utf-8")
-					title = soup.select_one('title').text
+					headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
+					result = requests.get(url, headers=headers).content
+					soup = bs(result, 'html.parser')
+					title = soup.find('title')
 					print ('')
-					print (' [+] URL Title: ' + title)
+					print (' [+] URL Title: ' + str(title.text))
 					print (' [+] URL: ' + url)
 					print (' [+] URL Status: ' + result.status_code)
 				except:
-					print ('')
-					print (' [x] No title found')
-					print (' [x] URL: ' + url)
-					print (' [x] URL Status: ' + result.status_code)
+					pass
 			except:
-				print (' [x] Error')
+				pass
 				
 if (len(sys.argv)) == 2:
 	try:
