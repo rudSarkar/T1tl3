@@ -33,6 +33,7 @@ def checkTitle(argv):
 				line2 = line.strip()
 				url = 'http://'+line2
 				try:
+					# User-Agent Added
 					headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
 					result = requests.get(url, headers=headers).content
 					soup = bs(result, 'html.parser')
